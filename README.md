@@ -4,8 +4,10 @@ Starting this repository to recapture interest and skillset in java programming 
 
 ## Topics covered
 
+- JVM 
 - 'if-else' loop
 - 'while' loop
+- 'do-while' loop
 - 'for each/for i' loop
 - HashMap
 - Scanner
