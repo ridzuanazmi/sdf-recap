@@ -28,15 +28,18 @@ public class WorkshopDay1 {
             System.out.printf("%s has been added to your shopping cart.\n", item.trim());
           }
           break;
-        case "delete":
-          String itemToDelete = scanner.nextLine().trim();
-          deleteItemFromCart(shoppingCart, itemToDelete);
+        case "remove":
+          String itemToRemove = scanner.nextLine().trim();
+          removeItemFromCart(shoppingCart, itemToRemove);
           break;
         case "clear":
           shoppingCart.clear();
           System.out.println("Your shopping cart has been cleared.");
           break;
-        case "exit":
+        case "help":
+          printMenu();
+          break;
+        case "quit":
           System.out.println("Thank you for using the shopping cart.");
           System.exit(0);
           break;
@@ -49,7 +52,7 @@ public class WorkshopDay1 {
     scanner.close();
   }
 
-  private static void deleteItemFromCart(ArrayList<String> shoppingCart, String itemToDelete) {
+  private static void removeItemFromCart(ArrayList<String> shoppingCart, String itemToDelete) {
     if (itemToDelete.matches("\\d+")) {
       int itemNumber = Integer.parseInt(itemToDelete);
       if (itemNumber >= 1 && itemNumber <= shoppingCart.size()) {
@@ -79,10 +82,11 @@ public class WorkshopDay1 {
     System.out.print("""
         ---------------Welcome to your shopping cartItems---------------
         Type in what you want to do
-        list
-        add
-        remove
-        quit
+        list - List all items in your shopping cart
+        add - Add item(s) to your shopping cart
+        remove - Remove item(s) from your shopping cart
+        help - Display the menu
+        quit - Exit the program
         """);
   }
 }
